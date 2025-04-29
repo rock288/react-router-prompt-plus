@@ -4,7 +4,7 @@ Block navigation in React Router and show a custom confirmation dialog before le
 
 ## ✨ Features
 
-- ✅ Blocks route transitions (`react-router-dom@6+`)
+- ✅ Blocks route transitions (`react-router-dom@6+`) and shall be ideally used with [data routers](https://reactrouter.com/6.28.1/routers/picking-a-router#using-v64-data-apis)
 - ✅ Supports `beforeunload` (tab close, reload)
 - ✅ UI agnostic – _you write your own confirmation UI_
 - ✅ Built with TypeScript
