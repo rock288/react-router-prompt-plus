@@ -1,0 +1,11 @@
+example/
+src/
+.git/
+.vscode/
+
+tsconfig.json
+.eslintrc.js
+.prettierrc
+.env
+
+README.local.md
