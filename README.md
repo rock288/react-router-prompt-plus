@@ -17,6 +17,8 @@ Block navigation in React Router and show a custom confirmation dialog before le
 npm install react-router-prompt-plus
 ```
 
+### [Example](https://github.com/rock288/react-router-prompt-plus/blob/main/example/my-app/src/App.tsx)
+
 ### 🚀 Usage
 
 ```typescript
