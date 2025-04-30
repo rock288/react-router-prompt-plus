@@ -69,4 +69,4 @@ Options
 
 ### 🛠️ License
 
-MIT – Made by `Rock288`
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
