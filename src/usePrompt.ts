@@ -18,16 +18,10 @@ export function usePrompt({
   beforeUnload = true,
 }: UsePromptOptions): UsePromptReturn {
   const [showPrompt, setShowPrompt] = useState(false)
-  const [nextAction, setNextAction] = useState<null | (() => void)>(null)
 
   const blocker = useBlocker((tx) => {
     if (when) {
       setShowPrompt(true)
-      setNextAction(() => () => {
-        tx.historyAction === "PUSH" &&
-          tx.nextLocation &&
-          window.history.pushState({}, "", tx.nextLocation.pathname)
-      })
       return true
     }
     return false
@@ -35,8 +29,8 @@ export function usePrompt({
 
   const handleConfirm = useCallback(() => {
     setShowPrompt(false)
-    nextAction?.()
-  }, [nextAction])
+    blocker.proceed?.()
+  }, [blocker])
 
   const handleCancel = useCallback(() => {
     setShowPrompt(false)

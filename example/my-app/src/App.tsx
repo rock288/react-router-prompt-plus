@@ -1,6 +1,16 @@
 import { useState } from "react"
 import { usePrompt } from "react-router-prompt-plus"
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom"
+import {
+  Button,
+  Container,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  TextField,
+} from "@mui/material"
 
 function FormPage() {
   const [isDirty, setIsDirty] = useState(false)
@@ -8,29 +18,54 @@ function FormPage() {
     when: isDirty,
   })
 
+  const onConfirm = () => {
+    handleConfirm()
+    setIsDirty(false)
+  }
+
+  const onCancel = () => {
+    handleCancel()
+  }
+
   return (
-    <div>
+    <Container maxWidth="sm">
       <h2>Form Page</h2>
-      <input
+      <TextField
+        label="Name"
+        variant="outlined"
         onChange={() => setIsDirty(true)}
         placeholder="Type something..."
       />
       <br />
+      <br />
       <Link to="/other">Go to Other Page</Link>
 
-      {showPrompt && (
-        <div style={{ background: "#eee", padding: 20 }}>
-          <p>Changes are not saved. Leave anyway?</p>
-          <button onClick={handleConfirm}>Leave</button>
-          <button onClick={handleCancel}>Stay</button>
-        </div>
-      )}
-    </div>
+      <Dialog
+        open={showPrompt}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Use Google's location service?"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            <p>Changes are not saved. Leave anyway?</p>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={onConfirm}>Leave</Button>
+          <Button onClick={onCancel} autoFocus>
+            Stay
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </Container>
   )
 }
 
 function OtherPage() {
-  return <h2>Other Page</h2>
+  return <Container maxWidth="sm">Other Page</Container>
 }
 
 const router = createBrowserRouter([

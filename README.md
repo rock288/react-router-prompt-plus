@@ -17,9 +17,11 @@ Block navigation in React Router and show a custom confirmation dialog before le
 npm install react-router-prompt-plus
 ```
 
-### [Example](https://github.com/rock288/react-router-prompt-plus/blob/main/example/my-app/src/App.tsx)
+## [✨ Example](https://github.com/rock288/react-router-prompt-plus/blob/main/example/my-app/src/App.tsx)
 
-### 🚀 Usage
+## [✨ Demo](https://github.com/rock288/react-router-prompt-plus/blob/main/example/my-app/src/App.tsx)
+
+## 🚀 Usage
 
 ```typescript
 import { usePrompt } from "react-router-prompt-plus"
@@ -31,14 +33,23 @@ function MyForm() {
     when: isDirty,
   })
 
+  const onConfirm = () => {
+    handleConfirm()
+    setIsDirty(false)
+  }
+
+  const onCancel = () => {
+    handleCancel()
+  }
+
   return (
     <div>
       <input onChange={() => setIsDirty(true)} />
       {showPrompt && (
         <div className="modal">
           <p>Are you sure you want to leave this page?</p>
-          <button onClick={handleConfirm}>Yes</button>
-          <button onClick={handleCancel}>No</button>
+          <button onClick={onConfirm}>Yes</button>
+          <button onClick={onCancel}>No</button>
         </div>
       )}
     </div>
@@ -46,7 +57,7 @@ function MyForm() {
 }
 ```
 
-### ⚙️ API
+## ⚙️ API
 
 `usePrompt(options: UsePromptOptions): UsePromptReturn`
 
@@ -67,6 +78,6 @@ Options
 }
 ```
 
-### 🛠️ License
+## 🛠️ License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
