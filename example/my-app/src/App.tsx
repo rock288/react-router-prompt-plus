@@ -16,6 +16,7 @@ function FormPage() {
   const [isDirty, setIsDirty] = useState(false)
   const { showPrompt, handleConfirm, handleCancel } = usePrompt({
     when: isDirty,
+    ignoreHash: true,
   })
 
   const onConfirm = () => {
@@ -39,6 +40,8 @@ function FormPage() {
       <br />
       <br />
       <Link to="/other">Go to Other Page</Link>
+      <Link to="#tab-1">Home tab 1</Link>
+      <Link to="#tab-2">Home tab 2</Link>
 
       <Dialog
         open={showPrompt}

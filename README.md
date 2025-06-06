@@ -65,10 +65,12 @@ function MyForm() {
 
 Options
 
-| Name         |  Type   | Default |                    Description |
-| :----------- | :-----: | ------: | -----------------------------: |
-| when         | boolean |         |    Whether to block navigation |
-| beforeUnload | boolean |    true | Block browser tab close/reload |
+| Name         |  Type   | Default |                                                     Description |
+| :----------- | :-----: | ------: | --------------------------------------------------------------: |
+| when         | boolean |         |                                     Whether to block navigation |
+| beforeUnload | boolean |    true |                                  Block browser tab close/reload |
+| ignoreHash   | boolean |    true |   Ignore compare field hash of currentLocation and nextLocation |
+| ignoreSearch | boolean |    true | Ignore compare field search of currentLocation and nextLocation |
 
 - Returns
 
