@@ -33,6 +33,8 @@ function MyForm() {
 
   const { showPrompt, handleConfirm, handleCancel } = usePrompt({
     when: isDirty,
+    ignoreHash: true,
+    ignoreSearch: true,
   })
 
   const onConfirm = () => {
