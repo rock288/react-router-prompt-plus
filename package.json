@@ -1,6 +1,6 @@
 {
   "name": "react-router-prompt-plus",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A React library to block route transitions and show confirm prompt.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
