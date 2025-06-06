@@ -71,8 +71,8 @@ Options
 | :----------- | :-----: | ------: | ---------------------------------------------------------------------: |
 | when         | boolean |         |                                            Whether to block navigation |
 | beforeUnload | boolean |    true |                                         Block browser tab close/reload |
-| ignoreHash   | boolean |    true |   Ignore comparing the hash field of currentLocation and nextLocation. |
-| ignoreSearch | boolean |    true | Ignore comparing the search field of currentLocation and nextLocation. |
+| ignoreHash   | boolean |   false |   Ignore comparing the hash field of currentLocation and nextLocation. |
+| ignoreSearch | boolean |   false | Ignore comparing the search field of currentLocation and nextLocation. |
 
 - Returns
 
